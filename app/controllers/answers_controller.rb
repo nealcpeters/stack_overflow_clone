@@ -5,7 +5,11 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(answer_params)
     @answer.user_id = current_user.id
     if @answer.save
-      redirect_to @question
+      if request.xhr?
+        redirect_to @question
+      else
+        redirect_to @question
+      end
     else
       p "failed"
     end

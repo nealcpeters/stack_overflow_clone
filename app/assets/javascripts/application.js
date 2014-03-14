@@ -42,7 +42,9 @@ $(document).ready(function() {
       var route = $('#new_answer').attr('action')
       var data = $('#new_answer').serialize()
         $.post(route, data, function(reply) {
-
+            console.log("fun")
+            $('#placeholder').append((($(reply).find('.row').last()).prev()).prev())
+            $('#answer_body').val(' ')
         })
     })
 })
