@@ -34,3 +34,15 @@
     });
 });
 */
+
+
+$(document).ready(function() {
+    $('#new_answer').on('submit', function(e) {
+      e.preventDefault();
+      var route = $('#new_answer').attr('action')
+      var data = $('#new_answer').serialize()
+        $.post(route, data, function(reply) {
+
+        })
+    })
+})
